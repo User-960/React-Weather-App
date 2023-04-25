@@ -8,7 +8,7 @@ interface Props {
 export const MonthStatistics = (props: Props) => {
   return (
     <div className={s.MonthStatistics}>
-      MonthStatistics
+      Month Statistics
     </div>
   )
 };
