@@ -1,10 +1,17 @@
 import React from "react";
+import Select from "react-select";
 import { GlobalSvgSelector } from "../../assets/icons/global/GlobalSvgSelector";
 import s from "./Header.module.scss";
 
 interface Props {}
 
 export const Header = (props: Props) => {
+  const options = [
+    { value: "chocolate", label: "Chocolate" },
+    { value: "strawberry", label: "Strawberry" },
+    { value: "vanilla", label: "Vanilla" },
+  ];
+
   return (
     <header className={s.header}>
       <div className={s.wrapper}>
@@ -13,7 +20,12 @@ export const Header = (props: Props) => {
         </div>
         <div className={s.title}>React weather</div>
       </div>
-      <div className={s.wrapper}></div>
+      <div className={s.wrapper}>
+        <div className={s.change__theme}>
+          <GlobalSvgSelector id="change-theme" />
+          <Select options={options} />
+        </div>
+      </div>
     </header>
   );
 };
