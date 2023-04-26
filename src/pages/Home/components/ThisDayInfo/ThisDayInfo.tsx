@@ -40,9 +40,9 @@ export const ThisDayInfo = (props: Props) => {
   return (
     <div className={s.this__day_info}>
       <div className={s.this__day_info_items}>
-        {items.map((item: Item): any => {
-          <ThisDayItem item={item} />
-        })}
+        {items.map((item: Item): JSX.Element => (
+          <ThisDayItem key={item.icon_id} item={item} />
+        ))}
       </div>
       <img src={cloud} alt="cloud" />
     </div>
