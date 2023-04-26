@@ -20,7 +20,7 @@ export const Days = (props: Props) => {
     {
       day_name: 'Mon',
       day_info: '28 aug',
-      icon_id: 'sun',
+      icon_id: 'sunshine',
       temp_day: '+18',
       temp_night: '+15',
       info: 'Sunshine',
