@@ -57,3 +57,42 @@
     box-shadow: 0px 3px 20px rgba(147, 144, 144, 0.28);
   }
 }
+
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 7px;
+}
+
+.cancel,
+.tab {
+  border-radius: 5px;
+  padding: 9px 20px;
+  background-color: $lite-background;
+  color: $lite-color;
+  font-size: 18px;
+  box-shadow: 2px 5px 25px -3px rgba(180, 180, 180, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.tab {
+  margin-right: 15px;
+  transition: .3s;
+
+  &.active {
+    background-color: $primary-color;
+    color: #fff;
+  }
+
+  &:hover {
+    background-color: $primary-color;
+    color: #fff;
+  }
+}
+
+.tabs__wrapper {
+  display: flex;
+}
