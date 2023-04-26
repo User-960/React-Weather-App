@@ -7,7 +7,7 @@ interface Props {
 }
 
 export interface Day {
-  day: string,
+  day_name: string,
   day_info: string,
   icon_id: string,
   temp_day: string,
@@ -18,23 +18,23 @@ export interface Day {
 export const Days = (props: Props) => {
   const days: Day[] = [
     {
-      day: 'Today',
+      day_name: 'Mon',
       day_info: '28 aug',
       icon_id: 'sun',
       temp_day: '+18',
       temp_night: '+15',
-      info: 'Cloudy',
+      info: 'Sunshine',
     },
     {
-      day: 'Tomorrow',
+      day_name: 'Tue',
       day_info: '29 aug',
       icon_id: 'small_rain_sun',
       temp_day: '+18',
       temp_night: '+15',
-      info: 'Light rain and sunshine',
+      info: 'Small rain and sunshine',
     },
     {
-      day: 'Wed',
+      day_name: 'Wed',
       day_info: '30 aug',
       icon_id: 'small_rain',
       temp_day: '+18',
@@ -42,7 +42,7 @@ export const Days = (props: Props) => {
       info: 'Small rain',
     },
     {
-      day: 'Thu',
+      day_name: 'Thu',
       day_info: '31 aug',
       icon_id: 'mainly_cloudy',
       temp_day: '+18',
@@ -50,7 +50,7 @@ export const Days = (props: Props) => {
       info: 'Cloudy',
     },
     {
-      day: 'Fri',
+      day_name: 'Fri',
       day_info: '1 sep',
       icon_id: 'rain',
       temp_day: '+18',
@@ -58,17 +58,17 @@ export const Days = (props: Props) => {
       info: 'Cloudy',
     },
     {
-      day: 'Sat',
+      day_name: 'Sat',
       day_info: '2 sep',
-      icon_id: 'sun',
+      icon_id: 'mainly_cloudy',
       temp_day: '+18',
       temp_night: '+15',
       info: 'Cloudy',
     },
     {
-      day: 'Sun',
+      day_name: 'Sun',
       day_info: '3 sep',
-      icon_id: 'sun',
+      icon_id: 'mainly_cloudy',
       temp_day: '+18',
       temp_night: '+15',
       info: 'Cloudy',
@@ -77,7 +77,7 @@ export const Days = (props: Props) => {
 
   return (
     <div className={s.days}>
-      {days.map((day: Day) => <Card day={day} />)}
+      {days.map((day: Day) => <Card key={day.day_name} day={day} />)}
     </div>
   )
 }
