@@ -14,8 +14,8 @@ export const Home = (props: Props) => {
       <div className={s.wrapper}>
         <ThisDay />
         <ThisDayInfo />
-        <Days />
       </div>
+      <Days />
     </div>
   )
 };
