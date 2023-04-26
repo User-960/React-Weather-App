@@ -1,0 +1,48 @@
+import React from 'react';
+import { GlobalSvgSelector } from '../../assets/icons/global/GlobalSvgSelector';
+import { Item } from '../../pages/Home/components/ThisDayInfo/ThisDayInfo';
+import { ThisDayItem } from '../../pages/Home/components/ThisDayInfo/ThisDayItem';
+import s from './Popup.module.scss';
+
+interface Props { }
+
+export const Popup = (props: Props) => {
+  const items: Item[] = [
+    {
+      icon_id: 'temp',
+      name: 'Temperature',
+      value: '20°C - feels like 17°C'
+    },
+    {
+      icon_id: 'pressure',
+      name: 'Pressure',
+      value: '765 mmHg - normal'
+    },
+    {
+      icon_id: 'precipitation',
+      name: 'Precipitation',
+      value: 'No precipitation'
+    },
+    {
+      icon_id: 'wind',
+      name: 'Wind',
+      value: '3 m/s southwest - light breeze'
+    }
+  ];
+
+  return (
+    <>
+      <div className={s.blur}></div>
+      <div className={s.popup}>
+        <div className={s.this__day_info_items}>
+          {items.map((item: Item): JSX.Element => (
+            <ThisDayItem key={item.icon_id} item={item} />
+          ))}
+        </div>
+        <div className={s.close}>
+          <GlobalSvgSelector id='close' />
+        </div>
+      </div>
+    </>
+  )
+}
