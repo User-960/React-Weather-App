@@ -2,12 +2,12 @@
 
 .popup {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: calc(50% - 325px);
   z-index: 1001;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 40px;
   max-width: 750px;
   width: 100%;
@@ -28,4 +28,47 @@
   position: absolute;
   top: 20px;
   right: 20px;
+  cursor: pointer;
+
+  svg {
+    transition: .3s;
+  }
+
+  &:hover {
+    svg {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+.day {
+  .day__temp {
+    font-weight: 500;
+    font-size: 60px;
+    color: $primary-color;
+    margin-bottom: 12px;
+  }
+
+  .day__name {
+    font-weight: 400;
+    font-size: 25px;
+    color: #000000;
+    margin-bottom: 12px;
+  }
+
+  .img {
+    margin-bottom: 12px;
+
+    svg {
+      width: 53px;
+      height: 53px;
+    }
+  }
+
+  .day__time,
+  .day__city {
+    font-weight: 400;
+    font-size: 15px;
+    color: $base-color;
+  }
 }

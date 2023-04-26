@@ -34,6 +34,19 @@ export const Popup = (props: Props) => {
     <>
       <div className={s.blur}></div>
       <div className={s.popup}>
+        <div className={s.day}>
+          <div className={s.day__temp}>20°C</div>
+          <div className={s.day__name}>Wednesday</div>
+          <div className={s.img}>
+            <GlobalSvgSelector id='sunshine' />
+          </div>
+          <div className={s.day__time}>
+            Time: <span>21:54</span>
+          </div>
+          <div className={s.day__city}>
+            City: <span>Saint-Petersburg</span>
+          </div>
+        </div >
         <div className={s.this__day_info_items}>
           {items.map((item: Item): JSX.Element => (
             <ThisDayItem key={item.icon_id} item={item} />
@@ -42,7 +55,7 @@ export const Popup = (props: Props) => {
         <div className={s.close}>
           <GlobalSvgSelector id='close' />
         </div>
-      </div>
+      </div >
     </>
   )
 }
