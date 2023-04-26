@@ -3,7 +3,7 @@
 .this__day_info {
   position: relative;
   padding: 40px;
-  max-width: -750px;
+  max-width: 750px;
   width: 100%;
   background: $lite-background;
   box-shadow: $box-shadow;
@@ -14,6 +14,7 @@
   position: relative;
   display: flex;
   align-items: center;
+  z-index: 10;
   margin-bottom: 25px;
 
   &:last-of-type {
