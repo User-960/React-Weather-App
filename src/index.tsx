@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import App from './App';
 import { ThemeProvider } from './provider/ThemeProvider';
+import { store } from './store/store';
 import './styles/index.scss';
 
 const root = ReactDOM.createRoot(
@@ -10,10 +12,12 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <Router>
-      <ThemeProvider>
-        <App />
-      </ThemeProvider>
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <ThemeProvider>
+          <App />
+        </ThemeProvider>
+      </Router>
+    </Provider>
   </React.StrictMode>
 );
