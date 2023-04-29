@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useCustomDispatch, useCustomSelector } from '../../hooks/store';
+import { selectCurrentWeatherData } from '../../store/selectors';
 import { fetchCurrentWeather } from '../../store/thunks/fetchCurrentWeather';
 import { Days } from './components/Days/Days';
 import { ThisDay } from './components/ThisDay/ThisDay';
@@ -13,7 +14,7 @@ interface Props {
 export const Home = (props: Props) => {
   const dispatch = useCustomDispatch();
 
-  const { weather } = useCustomSelector(state => state.currentWeatherSliceReducer);
+  const { weather } = useCustomSelector(selectCurrentWeatherData);
 
   useEffect(() => {
     dispatch(fetchCurrentWeather('paris'))
