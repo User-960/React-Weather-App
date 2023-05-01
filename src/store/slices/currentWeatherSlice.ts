@@ -18,7 +18,7 @@ const initialState: CurrentWeather = {
     main: {
       temp: 0
     },
-    name: ''
+    name: 'Moscow'
   },
   isLoading: false,
   response: {

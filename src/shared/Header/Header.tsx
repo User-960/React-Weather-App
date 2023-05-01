@@ -1,18 +1,25 @@
 import React from "react";
-import Select from "react-select";
+import Select, { SingleValue } from "react-select";
 import { GlobalSvgSelector } from "../../assets/icons/global/GlobalSvgSelector";
 import { Theme } from "../../context/ThemeContext";
+import { useCustomDispatch } from "../../hooks/store";
 import { useTheme } from "../../hooks/useTheme";
+import { fetchCurrentWeather } from "../../store/thunks/fetchCurrentWeather";
 import s from "./Header.module.scss";
 
 interface Props { }
 
+interface Option {
+  value: string,
+  label: string,
+}
+
 export const Header = (props: Props) => {
   const theme = useTheme();
 
-  const options = [
+  const options: Array<Option> = [
     { value: "city-1", label: "Moscow" },
-    { value: "city-2", label: "Saint-Petersburg" },
+    { value: "city-2", label: "Saint Petersburg" },
     { value: "city-3", label: "Novgorod" },
   ];
 
@@ -32,8 +39,17 @@ export const Header = (props: Props) => {
     }),
   };
 
+  const dispatch = useCustomDispatch();
+
   function changeTheme() {
     theme.changeTheme(theme.theme === Theme.LIGHT ? Theme.DARK : Theme.LIGHT);
+  };
+
+  const handleChange = (selectedOption: SingleValue<Option>) => {
+    if (selectedOption) {
+      const choosenCity: string = selectedOption.label;
+      dispatch(fetchCurrentWeather(choosenCity.toLowerCase()));
+    }
   };
 
   return (
@@ -52,6 +68,7 @@ export const Header = (props: Props) => {
           defaultValue={options[0]}
           options={options}
           styles={colourStyles}
+          onChange={handleChange}
         />
       </div>
     </header>
