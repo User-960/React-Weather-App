@@ -11,8 +11,8 @@ export const Header = (props: Props) => {
   const theme = useTheme();
 
   const options = [
-    { value: "city-1", label: "Saint-Petersburg" },
-    { value: "city-2", label: "Moscow" },
+    { value: "city-1", label: "Moscow" },
+    { value: "city-2", label: "Saint-Petersburg" },
     { value: "city-3", label: "Novgorod" },
   ];
 

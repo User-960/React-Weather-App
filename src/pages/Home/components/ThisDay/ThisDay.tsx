@@ -19,10 +19,17 @@ export const ThisDay = ({ weather }: Props) => {
       </div>
       <div className={s.bottom__block}>
         <div className={s.this__time}>
-          Time: <span>21:54</span>
+          Time: <span>{
+            new Date().toLocaleString('en',
+              {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric'
+              })
+          }</span>
         </div>
         <div className={s.this__city}>
-          City: <span>Saint-Petersburg</span>
+          City: <span>{weather.name}</span>
         </div>
       </div>
     </div>
