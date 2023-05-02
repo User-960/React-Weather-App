@@ -15,12 +15,12 @@ export const ThisDay = ({ weather }: Props) => {
           <div className={s.this__temp}>{Math.floor(weather.main.temp)}°C</div>
           <div className={s.this__day_name}>Today</div>
         </div>
-        <GlobalSvgSelector id="sun" />
+        <GlobalSvgSelector id={weather.weather[0].description} />
       </div>
       <div className={s.bottom__block}>
         <div className={s.this__time}>
           Time: <span>{
-            new Date().toLocaleString('en',
+            new Date().toLocaleString('en-US',
               {
                 day: 'numeric',
                 month: 'long',

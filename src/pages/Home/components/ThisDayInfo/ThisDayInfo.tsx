@@ -2,6 +2,8 @@ import React from 'react';
 import s from './ThisDayInfo.module.scss';
 import cloud from '../../../../assets/images/cloud.png';
 import { ThisDayItem } from './ThisDayItem';
+import { useCustomSelector } from '../../../../hooks/store';
+import { selectCurrentWeatherData } from '../../../../store/selectors';
 
 interface Props {
 
@@ -14,26 +16,27 @@ export interface Item {
 }
 
 export const ThisDayInfo = (props: Props) => {
+  const { weather } = useCustomSelector(selectCurrentWeatherData);
   const items: Item[] = [
     {
       icon_id: 'temp',
       name: 'Temperature',
-      value: '20°C - feels like 17°C'
+      value: `${Math.floor(weather.main.temp)}°C - feels like ${Math.floor(weather.main.feels_like)}°C`
     },
     {
       icon_id: 'pressure',
       name: 'Pressure',
-      value: '765 mmHg - normal'
+      value: `${weather.main.pressure} mmHg`
     },
     {
       icon_id: 'precipitation',
-      name: 'Precipitation',
-      value: 'No precipitation'
+      name: 'Description',
+      value: `${weather.weather[0].description}`
     },
     {
       icon_id: 'wind',
       name: 'Wind',
-      value: '3 m/s southwest - light breeze'
+      value: `${Math.floor(weather.wind.speed)} m/s`
     }
   ];
 

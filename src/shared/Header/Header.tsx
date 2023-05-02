@@ -21,6 +21,11 @@ export const Header = (props: Props) => {
     { value: "city-1", label: "Moscow" },
     { value: "city-2", label: "Saint Petersburg" },
     { value: "city-3", label: "Novgorod" },
+    { value: "city-4", label: "Kazan" },
+    { value: "city-5", label: "Krasnodar" },
+    { value: "city-6", label: "Sochi" },
+    { value: "city-7", label: "Vladivostok" },
+    { value: "city-8", label: "Rostov-on-Don" },
   ];
 
   const colourStyles = {
@@ -35,6 +40,12 @@ export const Header = (props: Props) => {
     }),
     singleValue: (styles: any) => ({
       ...styles,
+      color: theme.theme === Theme.DARK ? "#fff" : "#000",
+    }),
+    menu: (styles: any) => ({
+      ...styles,
+      zIndex: 100,
+      backgroundColor: theme.theme === Theme.DARK ? "#4f4f4f" : "#fff",
       color: theme.theme === Theme.DARK ? "#fff" : "#000",
     }),
   };

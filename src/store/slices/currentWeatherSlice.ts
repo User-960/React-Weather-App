@@ -16,9 +16,19 @@ type Response = {
 const initialState: CurrentWeather = {
   weather: {
     main: {
-      temp: 0
+      temp: 0,
+      feels_like: 0,
+      pressure: 0
     },
-    name: 'Moscow'
+    name: 'Moscow',
+    weather: [
+      {
+        description: 'clear sky'
+      }
+    ],
+    wind: {
+      speed: 0
+    }
   },
   isLoading: false,
   response: {
