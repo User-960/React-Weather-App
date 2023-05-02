@@ -15,13 +15,26 @@
 //   }
 // };
 
-// interface WeatherDay {
-//   temp: number,
-//   feels_like: number,
-//   pressure: number,
-//   temp_max: number
-//   temp_min: number
-// }
+export interface DayTemp {
+  temp: number,
+  feels_like: number,
+  pressure: number,
+  temp_max: number
+  temp_min: number
+}
+
+export interface TimeInterval {
+  dt_txt: string,
+  main: DayTemp,
+  weather: [
+    {
+      description: string
+    }
+  ],
+  wind: {
+    speed: number
+  }
+}
 
 export type Weather = {
   city: {
@@ -29,13 +42,8 @@ export type Weather = {
   },
   list: [
     {
-      main: {
-        temp: number,
-        feels_like: number,
-        pressure: number,
-        temp_max: number
-        temp_min: number
-      },
+      dt_txt: string,
+      main: DayTemp,
       weather: [
         {
           description: string
