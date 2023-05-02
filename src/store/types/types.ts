@@ -1,16 +1,49 @@
+// export type Weather = {
+//   main: {
+//     temp: number,
+//     feels_like: number,
+//     pressure: number
+//   },
+//   name: string,
+//   weather: [
+//     {
+//       description: string
+//     }
+//   ],
+//   wind: {
+//     speed: number
+//   }
+// };
+
+// interface WeatherDay {
+//   temp: number,
+//   feels_like: number,
+//   pressure: number,
+//   temp_max: number
+//   temp_min: number
+// }
+
 export type Weather = {
-  main: {
-    temp: number,
-    feels_like: number,
-    pressure: number
+  city: {
+    name: string,
   },
-  name: string,
-  weather: [
+  list: [
     {
-      description: string
+      main: {
+        temp: number,
+        feels_like: number,
+        pressure: number,
+        temp_max: number
+        temp_min: number
+      },
+      weather: [
+        {
+          description: string
+        }
+      ],
+      wind: {
+        speed: number
+      }
     }
   ],
-  wind: {
-    speed: number
-  }
 };

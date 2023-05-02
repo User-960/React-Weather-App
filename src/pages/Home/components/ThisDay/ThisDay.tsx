@@ -12,24 +12,32 @@ export const ThisDay = ({ weather }: Props) => {
     <div className={s.this__day}>
       <div className={s.top__block}>
         <div className={s.top__block_wrapper}>
-          <div className={s.this__temp}>{Math.floor(weather.main.temp)}°C</div>
+          <div className={s.this__temp}>{Math.floor(weather.list[0].main.temp)}°C</div>
           <div className={s.this__day_name}>Today</div>
         </div>
-        <GlobalSvgSelector id={weather.weather[0].description} />
+        <GlobalSvgSelector id={weather.list[0].weather[0].description} />
       </div>
       <div className={s.bottom__block}>
         <div className={s.this__time}>
           Time: <span>{
-            new Date().toLocaleString('en-US',
+            new Date().toLocaleTimeString('ru',
+              {
+                timeZoneName: 'short'
+              })
+          }</span>
+        </div>
+        <div className={s.this__date}>
+          Date: <span>{
+            new Date().toLocaleString('en',
               {
                 day: 'numeric',
                 month: 'long',
-                year: 'numeric'
+                year: 'numeric',
               })
           }</span>
         </div>
         <div className={s.this__city}>
-          City: <span>{weather.name}</span>
+          City: <span>{weather.city.name}</span>
         </div>
       </div>
     </div>

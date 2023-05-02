@@ -36,8 +36,10 @@
 .bottom__block {
 
   .this__time,
+  .this__date,
   .this__city {
-    font-size: 25px;
+    margin-bottom: 7px;
+    font-size: 23px;
     color: $base-color;
   }
 }

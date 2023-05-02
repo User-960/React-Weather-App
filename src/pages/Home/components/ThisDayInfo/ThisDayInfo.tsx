@@ -21,22 +21,22 @@ export const ThisDayInfo = (props: Props) => {
     {
       icon_id: 'temp',
       name: 'Temperature',
-      value: `${Math.floor(weather.main.temp)}°C - feels like ${Math.floor(weather.main.feels_like)}°C`
+      value: `${Math.floor(weather.list[0].main.temp)}°C - feels like ${Math.floor(weather.list[0].main.feels_like)}°C`
     },
     {
       icon_id: 'pressure',
       name: 'Pressure',
-      value: `${weather.main.pressure} mmHg`
+      value: `${weather.list[0].main.pressure} mmHg`
     },
     {
       icon_id: 'precipitation',
       name: 'Description',
-      value: `${weather.weather[0].description}`
+      value: `${weather.list[0].weather[0].description}`
     },
     {
       icon_id: 'wind',
       name: 'Wind',
-      value: `${Math.floor(weather.wind.speed)} m/s`
+      value: `${Math.floor(weather.list[0].wind.speed)} m/s`
     }
   ];
 
