@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Popup } from '../../../../shared/Popup/Popup';
 import { Card } from './Card';
 import s from './Days.module.scss';
 import { Tabs } from './Tabs';
@@ -74,13 +75,16 @@ export const Days = (props: Props): JSX.Element => {
       temp_night: '+15',
       info: 'rain and snow',
     }
-  ]
+  ];
+
+  const [popup, setPopup] = useState(false);
 
   return (
     <>
+      {popup && <Popup closePopup={() => setPopup(false)} />}
       <Tabs />
       <div className={s.days}>
-        {days.map((day: Day) => <Card key={day.day_name} day={day} />)}
+        {days.map((day: Day) => <Card key={day.day_name} day={day} openPopup={() => setPopup(true)} />)}
       </div>
     </>
   )

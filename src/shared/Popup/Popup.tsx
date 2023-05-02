@@ -4,9 +4,11 @@ import { Item } from '../../pages/Home/components/ThisDayInfo/ThisDayInfo';
 import { ThisDayItem } from '../../pages/Home/components/ThisDayInfo/ThisDayItem';
 import s from './Popup.module.scss';
 
-interface Props { }
+interface Props {
+  closePopup: () => void
+}
 
-export const Popup = (props: Props) => {
+export const Popup = ({ closePopup }: Props) => {
   const items: Item[] = [
     {
       icon_id: 'temp',
@@ -52,7 +54,7 @@ export const Popup = (props: Props) => {
             <ThisDayItem key={item.icon_id} item={item} />
           ))}
         </div>
-        <div className={s.close}>
+        <div className={s.close} onClick={closePopup}>
           <GlobalSvgSelector id='close' />
         </div>
       </div >

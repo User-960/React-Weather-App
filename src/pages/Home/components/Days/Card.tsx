@@ -5,13 +5,14 @@ import s from './Days.module.scss';
 
 interface Props {
   day: Day
+  openPopup: () => void
 }
 
-export const Card = ({ day }: Props) => {
+export const Card = ({ day, openPopup }: Props) => {
   const { day_name, day_info, icon_id, temp_day, temp_night, info } = day;
 
   return (
-    <div className={s.card}>
+    <div className={s.card} onClick={openPopup}>
       <div className={s.day__name}>{day_name}</div>
       <div className={s.day__info}>{day_info}</div>
       <div className={s.img}>
