@@ -98,3 +98,12 @@
 .tabs__wrapper {
   display: flex;
 }
+
+@media (max-width: 290px) {
+
+  .cancel,
+  .tab {
+    padding: 9px 12px;
+    font-size: 15px;
+  }
+}

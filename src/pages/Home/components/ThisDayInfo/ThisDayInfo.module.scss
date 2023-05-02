@@ -8,6 +8,8 @@
   background: var(#{--components-background-default});
   box-shadow: $box-shadow;
   border-radius: $border-radius;
+  margin-left: 30px;
+  overflow: hidden;
 }
 
 .item {
@@ -55,4 +57,33 @@
   position: absolute;
   top: 0;
   right: 0;
+  opacity: 80%;
+}
+
+@media (max-width: 800px) {
+  .indicator__value {
+    margin-left: 15px;
+    max-width: 80px;
+  }
+}
+
+@media (max-width: 676px) {
+  .item {
+    flex-direction: column;
+    text-align: center;
+
+    .indicator,
+    .indicator__value,
+    .indicator__name {
+      margin: 0;
+      margin-bottom: 7px;
+    }
+  }
+}
+
+@media (max-width: 410px) {
+  .this__day_info {
+    margin-left: 0px;
+    margin-top: 30px;
+  }
 }

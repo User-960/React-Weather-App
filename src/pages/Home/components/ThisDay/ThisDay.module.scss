@@ -41,5 +41,108 @@
     margin-bottom: 7px;
     font-size: 23px;
     color: $base-color;
+
+    span {
+      margin-left: 10px;
+    }
+  }
+}
+
+@media (max-width: 780px) {
+  .top__block {
+    svg {
+      width: 79px;
+      height: 79px;
+    }
+
+    .this__temp {
+      font-size: 68px;
+    }
+
+    .this__day_name {
+      font-size: 36px;
+    }
+  }
+}
+
+@media (max-width: 676px) {
+  .top__block {
+    flex-direction: column-reverse;
+    height: 230px;
+
+    .this__day_name {
+      margin-top: 10px;
+    }
+  }
+
+  .bottom__block {
+
+    .this__time,
+    .this__date,
+    .this__city {
+      font-size: 18px;
+    }
+  }
+}
+
+@media (max-width: 540px) {
+  .top__block {
+    height: 180px;
+
+    svg {
+      width: 59px;
+      height: 59px;
+    }
+
+    .this__temp {
+      font-size: 48px;
+    }
+
+    .this__day_name {
+      font-size: 30px;
+    }
+  }
+
+  .bottom__block {
+
+    .this__time,
+    .this__date,
+    .this__city {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+
+      span {
+        margin-top: 5px;
+        margin-left: 0px;
+      }
+    }
+  }
+}
+
+@media (max-width: 410px) {
+  .bottom__block {
+
+    .this__time,
+    .this__date,
+    .this__city {
+      display: flex;
+      flex-direction: row;
+
+      span {
+        margin-top: 0px;
+      }
+    }
+  }
+}
+
+@media (max-width: 260px) {
+  .bottom__block {
+
+    .this__time,
+    .this__date,
+    .this__city {
+      font-size: 15px;
+    }
   }
 }
