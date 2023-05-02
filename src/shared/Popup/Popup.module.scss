@@ -11,7 +11,7 @@
   padding: 40px;
   max-width: 750px;
   width: 100%;
-  background: $light-background;
+  background: var(#{--components-background-default});
   box-shadow: $box-shadow;
   border-radius: $border-radius;
 }
@@ -55,7 +55,7 @@
   .day__name {
     font-weight: 400;
     font-size: 25px;
-    color: #000000;
+    color: var(#{--text-color-default});
     margin-bottom: 12px;
   }
 

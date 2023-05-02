@@ -18,7 +18,7 @@ export const Tabs = (props: Props): JSX.Element => {
       value: 'On 10 days'
     },
     {
-      value: 'On month'
+      value: 'On 16 days'
     }
   ]
 

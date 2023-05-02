@@ -22,7 +22,7 @@ export const Popup = ({ closePopup }: Props) => {
     },
     {
       icon_id: 'precipitation',
-      name: 'Precipitation',
+      name: 'Description',
       value: 'No precipitation'
     },
     {
@@ -40,7 +40,7 @@ export const Popup = ({ closePopup }: Props) => {
           <div className={s.day__temp}>20°C</div>
           <div className={s.day__name}>Wednesday</div>
           <div className={s.img}>
-            <GlobalSvgSelector id='sunshine' />
+            <GlobalSvgSelector id='clear sky' />
           </div>
           <div className={s.day__time}>
             Time: <span>21:54</span>
