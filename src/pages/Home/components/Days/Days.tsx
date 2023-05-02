@@ -18,7 +18,13 @@ export const Days = (props: Props): JSX.Element => {
       {popup && <Popup closePopup={() => setPopup(false)} />}
       <Tabs />
       <div className={s.days}>
-        {weather.list.map((interval: TimeInterval) => <Card key={interval.dt_txt} interval={interval} openPopup={() => setPopup(true)} />)}
+        {weather.list.map((interval: TimeInterval) =>
+          <Card
+            key={interval.dt_txt}
+            interval={interval}
+            openPopup={() => setPopup(true)}
+          />
+        )}
       </div>
     </>
   )

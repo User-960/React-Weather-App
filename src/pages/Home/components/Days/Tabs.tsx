@@ -12,13 +12,7 @@ interface Tab {
 export const Tabs = (props: Props): JSX.Element => {
   const tabs: Tab[] = [
     {
-      value: 'On week'
-    },
-    {
-      value: 'On 10 days'
-    },
-    {
-      value: 'On 16 days'
+      value: '3 hours'
     }
   ]
 
