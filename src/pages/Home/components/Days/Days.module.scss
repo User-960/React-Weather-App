@@ -2,7 +2,7 @@
 
 .days {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
   padding: 20px;
   width: 100%;
@@ -17,6 +17,7 @@
   background-color: var(#{--card-background-default});
   border-radius: 10px;
   padding: 10px;
+  margin: 0 5px;
   width: 149px;
   transition: .3s;
   cursor: pointer;
@@ -97,6 +98,13 @@
 
 .tabs__wrapper {
   display: flex;
+}
+
+@media (max-width: 1175px) {
+  .card {
+    margin: 7px;
+    width: 162px;
+  }
 }
 
 @media (max-width: 290px) {
