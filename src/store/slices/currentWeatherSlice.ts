@@ -20,6 +20,7 @@ const initialState: CurrentWeather = {
     },
     list: [
       {
+        dt: 0,
         dt_txt: '',
         main: {
           temp: 0,

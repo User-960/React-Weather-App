@@ -2,6 +2,8 @@ import React from 'react';
 import { GlobalSvgSelector } from '../../assets/icons/global/GlobalSvgSelector';
 import { Item } from '../../pages/Home/components/ThisDayInfo/ThisDayInfo';
 import { ThisDayItem } from '../../pages/Home/components/ThisDayInfo/ThisDayItem';
+import { useCustomSelector } from '../../hooks/store';
+import { selectCurrentWeatherData } from '../../store/selectors';
 import { TimeInterval } from '../../store/types/types';
 import s from './Popup.module.scss';
 
@@ -11,6 +13,14 @@ interface Props {
 }
 
 export const Popup = ({ intTime, closePopup }: Props) => {
+  const { weather } = useCustomSelector(selectCurrentWeatherData);
+
+  const dateWeekDay = (date: TimeInterval): string => {
+    let timestamp = date.dt;
+    let weekDay = new Date(timestamp * 1000);
+    return weekDay.toString().slice(0, 3);
+  };
+
   const items: Item[] = [
     {
       icon_id: 'temp',
@@ -39,16 +49,23 @@ export const Popup = ({ intTime, closePopup }: Props) => {
       <div className={s.blur}></div>
       <div className={s.popup}>
         <div className={s.day}>
-          <div className={s.day__temp}>20°C</div>
-          <div className={s.day__name}>Wednesday</div>
+          <div className={s.top__block}>
+            <div className={s.day__temp}>{Math.floor(intTime.main.temp)}°C</div>
+            <div className={s.day__name}>{dateWeekDay(intTime)}</div>
+          </div>
           <div className={s.img}>
-            <GlobalSvgSelector id='clear sky' />
+            <GlobalSvgSelector id={intTime.weather[0].description} />
           </div>
-          <div className={s.day__time}>
-            Time: <span>21:54</span>
-          </div>
-          <div className={s.day__city}>
-            City: <span>Saint-Petersburg</span>
+          <div className={s.bottom__block}>
+            <div className={s.day__time}>
+              Time: <span>{intTime.dt_txt.slice(10, 16)}</span>
+            </div>
+            <div className={s.day__date}>
+              Date: <span>{intTime.dt_txt.slice(0, 10)}</span>
+            </div>
+            <div className={s.day__city}>
+              City: <span>{weather.city.name}</span>
+            </div>
           </div>
         </div >
         <div className={s.this__day_info_items}>

@@ -45,9 +45,13 @@
 }
 
 .day {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 200px;
+
   .day__temp {
     font-weight: 500;
-    font-size: 60px;
+    font-size: 54px;
     color: $primary-color;
     margin-bottom: 12px;
   }
@@ -60,19 +64,26 @@
   }
 
   .img {
-    margin-bottom: 12px;
+    padding-top: 10px;
+    padding-left: 22px;
 
     svg {
-      width: 53px;
-      height: 53px;
+      width: 50px;
+      height: 50px;
     }
   }
 
   .day__time,
+  .day__date,
   .day__city {
     font-weight: 400;
     font-size: 15px;
     color: $base-color;
+    margin-bottom: 5px;
+
+    span {
+      margin-left: 5px;
+    }
   }
 }
 

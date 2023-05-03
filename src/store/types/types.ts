@@ -24,6 +24,7 @@ export interface DayTemp {
 }
 
 export interface TimeInterval {
+  dt: number
   dt_txt: string,
   main: DayTemp,
   weather: [
@@ -42,6 +43,7 @@ export type Weather = {
   },
   list: [
     {
+      dt: number
       dt_txt: string,
       main: DayTemp,
       weather: [
