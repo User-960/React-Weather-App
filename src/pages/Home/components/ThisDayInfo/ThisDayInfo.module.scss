@@ -67,7 +67,7 @@
   }
 }
 
-@media (max-width: 676px) {
+@media (max-width: 716px) {
   .item {
     flex-direction: column;
     text-align: center;
@@ -78,6 +78,20 @@
       margin: 0;
       margin-bottom: 7px;
     }
+  }
+}
+
+@media (max-width: 450px) {
+  .this__day_info {
+    display: flex;
+    justify-content: center;
+    margin-left: 30px;
+  }
+
+  .this__day_info_items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
   }
 }
 

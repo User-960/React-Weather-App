@@ -46,37 +46,38 @@ export const Popup = ({ intTime, closePopup }: Props) => {
 
   return (
     <>
-      <div className={s.blur}></div>
-      <div className={s.popup}>
-        <div className={s.day}>
-          <div className={s.top__block}>
-            <div className={s.day__temp}>{Math.floor(intTime.main.temp)}°C</div>
-            <div className={s.day__name}>{dateWeekDay(intTime)}</div>
+      <div className={s.blur}>
+        <div className={s.popup}>
+          <div className={s.day}>
+            <div className={s.top__block}>
+              <div className={s.day__temp}>{Math.floor(intTime.main.temp)}°C</div>
+              <div className={s.day__name}>{dateWeekDay(intTime)}</div>
+            </div>
+            <div className={s.img}>
+              <GlobalSvgSelector id={intTime.weather[0].description} />
+            </div>
+            <div className={s.bottom__block}>
+              <div className={s.day__time}>
+                Time: <span>{intTime.dt_txt.slice(10, 16)}</span>
+              </div>
+              <div className={s.day__date}>
+                Date: <span>{intTime.dt_txt.slice(0, 10)}</span>
+              </div>
+              <div className={s.day__city}>
+                City: <span>{weather.city.name}</span>
+              </div>
+            </div>
+          </div >
+          <div className={s.this__day_info_items}>
+            {items.map((item: Item): JSX.Element => (
+              <ThisDayItem key={item.icon_id} item={item} />
+            ))}
           </div>
-          <div className={s.img}>
-            <GlobalSvgSelector id={intTime.weather[0].description} />
-          </div>
-          <div className={s.bottom__block}>
-            <div className={s.day__time}>
-              Time: <span>{intTime.dt_txt.slice(10, 16)}</span>
-            </div>
-            <div className={s.day__date}>
-              Date: <span>{intTime.dt_txt.slice(0, 10)}</span>
-            </div>
-            <div className={s.day__city}>
-              City: <span>{weather.city.name}</span>
-            </div>
+          <div className={s.close} onClick={closePopup}>
+            <GlobalSvgSelector id='close' />
           </div>
         </div >
-        <div className={s.this__day_info_items}>
-          {items.map((item: Item): JSX.Element => (
-            <ThisDayItem key={item.icon_id} item={item} />
-          ))}
-        </div>
-        <div className={s.close} onClick={closePopup}>
-          <GlobalSvgSelector id='close' />
-        </div>
-      </div >
+      </div>
     </>
   )
 }
