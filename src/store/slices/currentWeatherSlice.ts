@@ -16,7 +16,7 @@ type Response = {
 const initialState: CurrentWeather = {
   weather: {
     city: {
-      name: 'Moscow'
+      name: 'moscow'
     },
     list: [
       {

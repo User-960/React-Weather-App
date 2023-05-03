@@ -2,33 +2,35 @@ import React from 'react';
 import { GlobalSvgSelector } from '../../assets/icons/global/GlobalSvgSelector';
 import { Item } from '../../pages/Home/components/ThisDayInfo/ThisDayInfo';
 import { ThisDayItem } from '../../pages/Home/components/ThisDayInfo/ThisDayItem';
+import { TimeInterval } from '../../store/types/types';
 import s from './Popup.module.scss';
 
 interface Props {
+  intTime: TimeInterval
   closePopup: () => void
 }
 
-export const Popup = ({ closePopup }: Props) => {
+export const Popup = ({ intTime, closePopup }: Props) => {
   const items: Item[] = [
     {
       icon_id: 'temp',
       name: 'Temperature',
-      value: '20°C - feels like 17°C'
+      value: `${Math.floor(intTime.main.temp)}°C - feels like ${Math.floor(intTime.main.feels_like)}°C`
     },
     {
       icon_id: 'pressure',
       name: 'Pressure',
-      value: '765 mmHg - normal'
+      value: `${intTime.main.pressure} mmHg`
     },
     {
       icon_id: 'precipitation',
       name: 'Description',
-      value: 'No precipitation'
+      value: `${intTime.weather[0].description}`
     },
     {
       icon_id: 'wind',
       name: 'Wind',
-      value: '3 m/s southwest - light breeze'
+      value: `${Math.floor(intTime.wind.speed)} m/s`
     }
   ];
 

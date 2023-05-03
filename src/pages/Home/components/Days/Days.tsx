@@ -12,10 +12,11 @@ interface Props { }
 export const Days = (props: Props): JSX.Element => {
   const { weather } = useCustomSelector(selectCurrentWeatherData);
   const [popup, setPopup] = useState(false);
+  const [intTime, setIntTime] = useState(weather.list[0]);
 
   return (
     <>
-      {popup && <Popup closePopup={() => setPopup(false)} />}
+      {popup && <Popup intTime={intTime} closePopup={() => setPopup(false)} />}
       <Tabs />
       <div className={s.days}>
         {weather.list.map((interval: TimeInterval) =>
@@ -23,6 +24,7 @@ export const Days = (props: Props): JSX.Element => {
             key={interval.dt_txt}
             interval={interval}
             openPopup={() => setPopup(true)}
+            getIntTime={setIntTime}
           />
         )}
       </div>
