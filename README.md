@@ -1,6 +1,10 @@
 # React Weather App
 
-The main purpose of the project is to write the project on React and TypeScript. The project itself is a weather app to check weather in different cities.
+The main purpose of the project is to write the project on React and TypeScript. The project itself is a weather forecast app to check weather in different cities.
+
+### Project Opportunities
+
+The project allows you to find out the weather in the city, as well as see the weather parameters: feels like, pressure, precipitation and wind. In addition, the project has weather rendering for every 3 hours. All this is divided into different widgets, which are drawn using the React library by component approach.
 
 ## What is used:
 
@@ -8,6 +12,12 @@ The main purpose of the project is to write the project on React and TypeScript.
 - Framework: React;
 - Preprocessor: SCSS;
 - Libraries: Redux-toolkit, React-router-dom, React-select, Axios;
+
+## To clone repository
+
+```shell
+git clone https://github.com/User-960/React-Weather-App.git
+```
 
 ## Available Scripts
 
